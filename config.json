@@ -25,7 +25,7 @@
     },
     "logoPath": {
       "locationType": "UriLocation",
-      "uri": "data/Logo_SB.svg"
+      "uri": "data/SB_Logo.svg"
     }
   },
   "plugins": [
