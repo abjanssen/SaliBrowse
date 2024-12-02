@@ -10,16 +10,16 @@
     "theme": {
       "palette": {
         "primary": {
-          "main": "#90adc6"
+          "main": "#0a4158"
         },
         "secondary": {
-          "main": "#fad02c"
+          "main": "#4b8378"
         },
         "tertiary": {
-          "main": "#333652"
+          "main": "#ff9636"
         },
         "quaternary": {
-          "main": "#e9eaec"
+          "main": "#e4d7d0"
         }
       }
     },
@@ -322,7 +322,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.5)",
+    "name": "SaliBrowse (v0.6)",
     "margin": 0,
     "views": [
       {
