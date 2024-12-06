@@ -185,16 +185,18 @@
         "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Alias:italics(feature.alias_gene_name), alias_gene_name:undefined, Prokka_locus_tag:feature.locus_tag, locus_tag:undefined, NCBI_locus_tag:feature.ncbi_locus_tag, ncbi_locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  NCBI:feature.protein_id != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.protein_id+'>'+'NCBI'+'</a>' : null, protein_id:undefined, uniprot:undefined, STRING: feature.stringdb != null ? '<a href=https://string-db.org/cgi/network?identifiers='+feature.stringdb+'>'+'STRING'+'</a>' : null, stringdb:undefined, PaperBLAST:feature.amino_acid_seq != null ? '<a href=https://papers.genomics.lbl.gov/cgi-bin/litSearch.cgi?query='+feature.amino_acid_seq+'>'+'PaperBLAST'+'</a>': null, amino_acid_seq:undefined, Essentiality: feature.essentiality != null ? jsonparse(feature.essentiality): null, essentiality:undefined}",
         "subfeatures": "jexl:{accession:undefined, name:italics(feature.name), type:capital(feature.type), Source:replaceuc(feature.source), source:undefined, phase:undefined, id:undefined, parent:undefined, EC_number: feature.ec_number != null ? '<a href=https://enzyme.expasy.org/EC/'+feature.ec_number+'>'+feature.ec_number+'</a>' : null , ec_number:undefined, Gene:italics(feature.gene), COG_number: feature.db_xref != null ? '<a href=https://www.ncbi.nlm.nih.gov/research/cog/cog/'+removecog(feature.db_xref)+'>'+removecog(feature.db_xref)+'</a>' : null, db_xref:undefined, gene:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, inference:undefined, locus_tag:undefined, Product:capital(feature.product), product:undefined, protein_id:undefined, RFAM: feature.accession != null ? '<a href=https://rfam.org/family/'+feature.accession+'>'+feature.accession+'</a>' : null, note:undefined, Note: feature.note != null ? removequotes(feature.note): null}"
       }
-    },
+    },    
     {
       "type": "MultiQuantitativeTrack",
-      "trackId": "WT_RNA_Seq",
-      "name": "WT",
+      "trackId": "WT_overexpression_RNA_Seq",
+      "name": "Overexpression - control (WT)",
       "assemblyNames": [
         "HSISS4"
       ],
       "category": [
-        "RNA-seq"
+        "RNA-seq",
+        "Regular RNA-seq",
+        "Overexpression mutants"
       ],
       "adapter": {
         "type": "MultiWiggleAdapter",
@@ -203,7 +205,7 @@
             "type": "BigWigAdapter",
             "bigWigLocation": {
               "locationType": "UriLocation",
-              "uri": "data/HSISS4/HSISS4_WT_F.bw"
+              "uri": "data/HSISS4/HSISS4_RNAseq_WT_F_P32.bw"
             },
             "source": "Plus strand"
           },
@@ -211,7 +213,7 @@
             "type": "BigWigAdapter",
             "bigWigLocation": {
               "locationType": "UriLocation",
-              "uri": "data/HSISS4/HSISS4_WT_R.bw"
+              "uri": "data/HSISS4/HSISS4_RNAseq_WT_R_P32.bw"
             },
             "source": "Minus strand"
           }
@@ -220,7 +222,7 @@
       "displays": [
         {
           "type": "MultiLinearWiggleDisplay",
-          "displayId": "RNAseq_WT",
+          "displayId": "WT_overexpression_RNA_Seq",
           "height": 100,
           "defaultRendering": "xyplot"
         }
@@ -228,13 +230,15 @@
     },
     {
       "type": "MultiQuantitativeTrack",
-      "trackId": "sComS_RNA_Seq",
-      "name": "WT + exogenous sComS",
+      "trackId": "ScuR_overexpression_RNA_Seq",
+      "name": "Overexpression - ScuR",
       "assemblyNames": [
         "HSISS4"
       ],
       "category": [
-        "RNA-seq"
+        "RNA-seq",
+        "Regular RNA-seq",
+        "Overexpression mutants"
       ],
       "adapter": {
         "type": "MultiWiggleAdapter",
@@ -243,7 +247,7 @@
             "type": "BigWigAdapter",
             "bigWigLocation": {
               "locationType": "UriLocation",
-              "uri": "data/HSISS4/HSISS4_sComS_F.bw"
+              "uri": "data/HSISS4/HSISS4_RNAseq_scuR_F_P32.bw"
             },
             "source": "Plus strand"
           },
@@ -251,7 +255,7 @@
             "type": "BigWigAdapter",
             "bigWigLocation": {
               "locationType": "UriLocation",
-              "uri": "data/HSISS4/HSISS4_sComS_R.bw"
+              "uri": "data/HSISS4/HSISS4_RNAseq_scuR_R_P32.bw"
             },
             "source": "Minus strand"
           }
@@ -260,7 +264,7 @@
       "displays": [
         {
           "type": "MultiLinearWiggleDisplay",
-          "displayId": "RNAseq_sComS",
+          "displayId": "ScuR_overexpression_RNA_Seq",
           "height": 100,
           "defaultRendering": "xyplot"
         }
@@ -268,13 +272,15 @@
     },
     {
       "type": "MultiQuantitativeTrack",
-      "trackId": "scuR_RNA_Seq",
-      "name": "Overexpression scuR",
+      "trackId": "sarF_overexpression_RNA_Seq",
+      "name": "Overexpression - SarF",
       "assemblyNames": [
         "HSISS4"
       ],
       "category": [
-        "RNA-seq"
+        "RNA-seq",
+        "Regular RNA-seq",
+        "Overexpression mutants"
       ],
       "adapter": {
         "type": "MultiWiggleAdapter",
@@ -283,7 +289,7 @@
             "type": "BigWigAdapter",
             "bigWigLocation": {
               "locationType": "UriLocation",
-              "uri": "data/HSISS4/HSISS4_scuR_F.bw"
+              "uri": "data/HSISS4/HSISS4_RNAseq_sarF_F_P32.bw"
             },
             "source": "Plus strand"
           },
@@ -291,7 +297,7 @@
             "type": "BigWigAdapter",
             "bigWigLocation": {
               "locationType": "UriLocation",
-              "uri": "data/HSISS4/HSISS4_scuR_R.bw"
+              "uri": "data/HSISS4/HSISS4_RNAseq_sarF_R_P32.bw"
             },
             "source": "Minus strand"
           }
@@ -300,7 +306,298 @@
       "displays": [
         {
           "type": "MultiLinearWiggleDisplay",
-          "displayId": "RNAseq_scuR",
+          "displayId": "sarF_overexpression_RNA_Seq",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "WT_sComS_RNA_Seq",
+      "name": "sComS stimulated - control (WT)",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Regular RNA-seq",
+        "sComS stimulated"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_WT_F_sComS.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_WT_R_sComS.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "WT_sComS_RNA_Seq",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "dComR_sComS_RNA_Seq",
+      "name": "sComS stimulated - ComR KO",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Regular RNA-seq",
+        "sComS stimulated"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_dComR_F_sComS.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_dComR_R_sComS.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "dComR_sComS_RNA_Seq",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "dComX_sComS_RNA_Seq",
+      "name": "sComS stimulated - ComX KO",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Regular RNA-seq",
+        "sComS stimulated"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_dComX_F_sComS.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_dComX_R_sComS.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "dComX_sComS_RNA_Seq",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "dOpp_sComS_RNA_Seq",
+      "name": "sComS stimulated - Opp KO",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Regular RNA-seq",
+        "sComS stimulated"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_dOpp_F_sComS.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_RNAseq_dOpp_R_sComS.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "dOpp_sComS_RNA_Seq",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "WT_smRNA_Seq",
+      "name": "smRNA - control (WT)",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Small RNA-seq"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_smRNA_WT_F.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_smRNA_WT_R.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "smRNAseq_WT",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "sComS_smRNA_Seq",
+      "name": "smRNA - WT + exogenous sComS",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Small RNA-seq"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_smRNA_sComS_F.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_smRNA_sComS_R.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "smRNAseq_sComS",
+          "height": 100,
+          "defaultRendering": "xyplot"
+        }
+      ]
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "scuR_smRNA_Seq",
+      "name": "smRNA - overexpression scuR",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "RNA-seq",
+        "Small RNA-seq"
+      ],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "subadapters": [
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_smRNA_scuR_F.bw"
+            },
+            "source": "Plus strand"
+          },
+          {
+            "type": "BigWigAdapter",
+            "bigWigLocation": {
+              "locationType": "UriLocation",
+              "uri": "data/HSISS4/HSISS4_smRNA_scuR_R.bw"
+            },
+            "source": "Minus strand"
+          }
+        ]
+      },
+      "displays": [
+        {
+          "type": "MultiLinearWiggleDisplay",
+          "displayId": "smRNAseq_scuR",
           "height": 100,
           "defaultRendering": "xyplot"
         }
@@ -448,7 +745,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.19)",
+    "name": "SaliBrowse (v0.20)",
     "margin": 0,
     "views": [
       {
