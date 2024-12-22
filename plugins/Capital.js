@@ -1,6 +1,9 @@
 // Capital.js
 ;(function () {
   class MyPlugin {
+    name = 'TextFormattingPlugin'
+    version = 'CapitalFormatting'
+    
     install() {}
     configure(pluginManager) {
       pluginManager.jexl.addFunction('capital', feature => {
@@ -14,7 +17,7 @@
 
         // Step 3 & 4: Test each part if it starts with "SPV_" or a capital letter
         const formattedParts = trimmedParts.map(part => {
-          if (part.startsWith("SPV_") || part.startsWith("tRNA") || part.startsWith("tmRNA") || part.startsWith("ncRNA") || part.startsWith("mRNA") || part.startsWith("rRNA") || /^[A-Z]/.test(part)) {
+          if (part.startsWith("SPV_") || part.startsWith("tRNA") || part.startsWith("tmRNA") || part.startsWith("ncRNA") || part.startsWith("mRNA") || part.startsWith("rRNA") ) {
             // If it starts with "SPV_" or a capital letter, return it normally
             return part;
           } else {
