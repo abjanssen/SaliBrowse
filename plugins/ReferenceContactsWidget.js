@@ -41,8 +41,8 @@ export default class MyPlugin {
       null, 
       React.createElement('h1', null, 'Contact and feedback'),
       React.createElement('p', null, 'Thank you for visiting! This genome browser was developed by the Veening lab at the University of Lausanne, Switzerland. If you have any questions or feedback, please contact us via email.'),
-      React.createElement('p', null, 'Email: ', React.createElement("a", {href: "mailto:Veening.lab@gmail.com"}, "Veening.lab@gmail.com" )),
-      React.createElement('p', null, 'For more genome browsers developed by the Veening lab, please visit: ', React.createElement("a", {href: "https://www.veeninglab.com/resources"}, "https://www.veeninglab.com/resources" ), "."))
+      React.createElement('p', null, 'Email: ', React.createElement("a", {href: "mailto:Veening.lab@gmail.com?subject=SaliBrowse"}, "Veening.lab@gmail.com" )),
+      React.createElement('p', null, 'For more genome browsers developed by the Veening lab, please visit: ', React.createElement("a", {href: "https://www.veeninglab.com/resources", target: "_blank", rel: "noopener noreferrer"}, "https://www.veeninglab.com/resources" ), "."))
       return React.createElement('div', null, [contactcontent])
     }
     const DataaAvailabilityWidget = props => {
@@ -53,7 +53,8 @@ export default class MyPlugin {
       'div', 
       null, 
       React.createElement('h1', null, 'Data Availability'),
-      React.createElement('p', null, 'The HSISS4 genome displayed within SaliBrowse is available from NCBI under accession number ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000448685.2/"}, "GCA_000448685.2"),'.'),
+      React.createElement('p', null, 'The HSISS4 genome displayed within SaliBrowse is available from NCBI under accession number ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000448685.2/", target: "_blank", rel: "noopener noreferrer"}, "GCA_000448685.2"),'.'),
+      React.createElement('p', null, 'RNA sequencing data is available from the NCBI under accession numbers ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100416", target: "_blank", rel: "noopener noreferrer"}, "GSE100416"),', and ',  React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120640", target: "_blank", rel: "noopener noreferrer"}, "GSE120640"),'.'),
       React.createElement('p', null, ''))
       return React.createElement('div', null, [availabilitycontent])
     }
