@@ -1,6 +1,6 @@
 # Welcome to SaliBrowse!
 
-Github repository for the SaliBrowse genome browser for _Streptococcys salivarius_ of the Veening laboratory at the University of Lausanne, in Lausanne, Switzerland.
+Github repository for the SaliBrowse genome browser for _Streptococcus salivarius_ of the Veening laboratory at the University of Lausanne, in Lausanne, Switzerland.
 Please visit the browser at https://salibrowse.veeninglab.com/.
 A short manual on how to use JBrowse2 can be found on the webpage of PneumoBrowse2 on the Veening lab website: https://veeninglab.com/pneumobrowse2.
 
