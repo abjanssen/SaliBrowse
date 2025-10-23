@@ -1,14 +1,13 @@
 {
-  "dateCreated": "2024-12-05T13:27:26.455Z",
+  "dateCreated": "2025-10-23T09:47:00.477Z",
   "tracks": [
     {
       "trackId": "HSISS4_coding_features",
       "attributesIndexed": [
-        "name",
         "gene",
         "locus_tag",
-        "ncbi_locus_tag",
-        "alias_gene_name"
+        "old_locus_tag",
+        "name"
       ],
       "excludedTypes": [
         "CDS",
