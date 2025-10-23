@@ -34,7 +34,7 @@
       "esmLoc": {
         "uri": "plugins/ReferenceContactsWidget.js"
       }
-    },    
+    },
     {
       "name": "NucContent",
       "umdLoc": {
@@ -723,7 +723,27 @@
     }
   ],
   "internetAccounts": [],
-  "aggregateTextSearchAdapters": [],
+  "aggregateTextSearchAdapters": [
+    {
+      "type": "TrixTextSearchAdapter",
+      "textSearchAdapterId": "HSISS4-index",
+      "ixFilePath": {
+        "uri": "trix/HSISS4.ix",
+        "locationType": "UriLocation"
+      },
+      "ixxFilePath": {
+        "uri": "trix/HSISS4.ixx",
+        "locationType": "UriLocation"
+      },
+      "metaFilePath": {
+        "uri": "trix/HSISS4_meta.json",
+        "locationType": "UriLocation"
+      },
+      "assemblyNames": [
+        "HSISS4"
+      ]
+    }
+  ],
   "connections": [],
   "defaultSession": {
     "drawerPosition": "left",

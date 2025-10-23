@@ -1,0 +1,57 @@
+{
+  "dateCreated": "2025-10-23T09:25:25.662Z",
+  "tracks": [
+    {
+      "trackId": "HSISS4_coding_features",
+      "attributesIndexed": [
+        "Name",
+        "ID"
+      ],
+      "excludedTypes": [
+        "CDS",
+        "exon"
+      ],
+      "adapterConf": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/HSISS4/HSISS4_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/HSISS4/HSISS4_sorted.gff.gz.tbi"
+          }
+        }
+      }
+    },
+    {
+      "trackId": "HSISS4_sgRNA",
+      "attributesIndexed": [
+        "Name",
+        "ID",
+        "name"
+      ],
+      "excludedTypes": [
+        "CDS",
+        "exon"
+      ],
+      "adapterConf": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/HSISS4/HSISS4_sgRNA_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/HSISS4/HSISS4_sgRNA_sorted.gff.gz.tbi"
+          }
+        }
+      }
+    }
+  ],
+  "assemblyNames": [
+    "HSISS4"
+  ]
+}
