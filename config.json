@@ -35,6 +35,12 @@
         "uri": "plugins/ReferenceContactsWidget.js"
       }
     },    
+            {
+              "name": "MsaView",
+              "umdLoc": {
+                "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js"
+              }
+            },
     {
       "name": "NucContent",
       "umdLoc": {
@@ -751,7 +757,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.37)",
+    "name": "SaliBrowse (v0.38)",
     "margin": 0,
     "views": [
       {
