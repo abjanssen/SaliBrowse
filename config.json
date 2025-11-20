@@ -42,6 +42,12 @@
               }
             },
     {
+      "name": "Protein3d",
+      "umdLoc": {
+        "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js"
+      }
+    },
+    {
       "name": "NucContent",
       "umdLoc": {
         "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
@@ -757,7 +763,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.38)",
+    "name": "SaliBrowse (v0.39)",
     "margin": 0,
     "views": [
       {
