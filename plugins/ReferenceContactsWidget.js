@@ -55,6 +55,7 @@ export default class MyPlugin {
       React.createElement('h1', null, 'Data Availability'),
       React.createElement('p', null, 'The HSISS4 genome displayed within SaliBrowse is available from NCBI under accession number ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000448685.2/", target: "_blank", rel: "noopener noreferrer"}, "GCA_000448685.2"),'.'),
       React.createElement('p', null, 'RNA sequencing data is available from the NCBI under accession numbers ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100416", target: "_blank", rel: "noopener noreferrer"}, "GSE100416"),', and ',  React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120640", target: "_blank", rel: "noopener noreferrer"}, "GSE120640"),'.'),
+      React.createElement('p', null, 'The manual annotation of the HSSIS4 genome is available from the NCBI under accession number ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/nuccore/CP013216.1/", target: "_blank", rel: "noopener noreferrer"}, "CP013216.1"),'.'),
       React.createElement('p', null, ''))
       return React.createElement('div', null, [availabilitycontent])
     }
