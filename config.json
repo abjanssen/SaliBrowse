@@ -185,12 +185,12 @@
         {
           "type": "LinearBasicDisplay",
           "displayId": "HSISS4_sorted.gff-LinearBasicDisplay",
-          "mouseover": "jexl: italics(get(feature,'name')) || get(feature,'ncbi_locus_tag') || get(feature,'locus_tag')",
+          "mouseover": "jexl: italics(get(feature,'name')) || get(feature,'locus_tag')",
           "renderer": {
             "type": "SvgFeatureRenderer",
             "color1": "jexl:get(feature,'type')=='tRNA'?'rgb(45, 41, 138)': get(feature,'type')=='tmRNA'?'rgb(45, 41, 138)': get(feature,'type')=='rRNA'?'rgb(136, 184, 77)' : get(feature,'type')=='mRNA_region'?'grey':'rgb(215, 163, 32)'",
             "labels": {
-              "name": "jexl: get(feature,'name') || get(feature,'ncbi_locus_tag') || get(feature,'locus_tag')"
+              "name": "jexl: get(feature,'name') || get(feature,'locus_tag')"
             }
           }
         },
