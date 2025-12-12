@@ -34,13 +34,13 @@
       "esmLoc": {
         "uri": "plugins/ReferenceContactsWidget.js"
       }
-    },    
-            {
-              "name": "MsaView",
-              "umdLoc": {
-                "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js"
-              }
-            },
+    },
+    {
+      "name": "MsaView",
+      "umdLoc": {
+        "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js"
+      }
+    },
     {
       "name": "Protein3d",
       "umdLoc": {
@@ -185,12 +185,12 @@
         {
           "type": "LinearBasicDisplay",
           "displayId": "HSISS4_sorted.gff-LinearBasicDisplay",
-          "mouseover": "jexl:italics(get(feature,'name')) || get(feature,'locus_tag')",
+          "mouseover": "jexl: italics(get(feature,'name')) || get(feature,'locus_tag')",
           "renderer": {
             "type": "SvgFeatureRenderer",
             "color1": "jexl:get(feature,'type')=='tRNA'?'rgb(45, 41, 138)': get(feature,'type')=='tmRNA'?'rgb(45, 41, 138)': get(feature,'type')=='rRNA'?'rgb(136, 184, 77)' : get(feature,'type')=='mRNA_region'?'grey':'rgb(215, 163, 32)'",
             "labels": {
-              "name": "jexl:get(feature,'name') || get(feature,'locus_tag')"
+              "name": "jexl: get(feature,'name') || get(feature,'locus_tag')"
             }
           }
         },
@@ -203,6 +203,53 @@
         "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Alias:italics(feature.alias_gene_name), alias_gene_name:undefined, Prokka_locus_tag:feature.locus_tag, locus_tag:undefined, NCBI_locus_tag:feature.ncbi_locus_tag, ncbi_locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  NCBI:feature.protein_id != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.protein_id+'>'+'NCBI'+'</a>' : null, protein_id:undefined, uniprot:undefined, STRING: feature.stringdb != null ? '<a href=https://string-db.org/cgi/network?identifiers='+feature.stringdb+'>'+'STRING'+'</a>' : null, stringdb:undefined, PaperBLAST:feature.amino_acid_seq != null ? '<a href=https://papers.genomics.lbl.gov/cgi-bin/litSearch.cgi?query='+feature.amino_acid_seq+'>'+'PaperBLAST'+'</a>': null, amino_acid_seq:undefined, KEGG:feature.ncbi_locus_tag != null ? '<a href=https://www.genome.jp/entry/ssah:'+feature.ncbi_locus_tag+'>'+'KEGG'+'</a>': null, Essentiality: feature.essentiality != null ? jsonparse(feature.essentiality): null, essentiality:undefined}",
         "subfeatures": "jexl:{accession:undefined, score:undefined, name:italics(feature.name), type:capital(feature.type), Source:replaceuc(feature.source), source:undefined, phase:undefined, id:undefined, parent:undefined, EC_number: feature.ec_number != null ? '<a href=https://enzyme.expasy.org/EC/'+feature.ec_number+'>'+feature.ec_number+'</a>' : null , ec_number:undefined, Gene:italics(feature.gene), COG_number: feature.db_xref != null ? '<a href=https://www.ncbi.nlm.nih.gov/research/cog/cog/'+removecog(feature.db_xref)+'>'+removecog(feature.db_xref)+'</a>' : null, db_xref:undefined, gene:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, inference:undefined, locus_tag:undefined, Product:capital(feature.product), product:undefined, protein_id:undefined, RFAM: feature.accession != null ? '<a href=https://rfam.org/family/'+feature.accession+'>'+feature.accession+'</a>' : null, note:undefined, Note: feature.note != null ? removequotes(feature.note): null}"
       }
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "HSISS4_coding_features_(NCBI)",
+      "name": "Coding features (NCBI)",
+      "assemblyNames": [
+        "HSISS4"
+      ],
+      "category": [
+        "Annotation"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/HSISS4/CP013216_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/HSISS4/CP013216_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "CP013216_sorted.gff-LinearBasicDisplay",
+          "mouseover": "jexl: italics(get(feature,'name')) || get(feature,'locus_tag')",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "jexl:get(feature,'gbkey')=='tRNA'?'rgb(45, 41, 138)': get(feature,'gbkey')=='tmRNA'?'rgb(45, 41, 138)': get(feature,'gbkey')=='rRNA'?'rgb(136, 184, 77)' : get(feature,'gbkey')=='mRNA_region'?'grey':'rgb(215, 163, 32)'",
+            "labels": {
+              "name": "jexl: get(feature,'name') || get(feature,'locus_tag')"
+            }
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "CP013216_sorted.gff-LinearArcDisplay"
+        }
+      ],
+        "formatDetails": {
+  "feature": "jexl:{id:undefined, gene_biotype:undefined, Gene:italics(feature.gene), gene:undefined, Type:feature.gene.biotype, source:undefined, Source:feature.source, Locus_tag:feature.locus_tag, locus_tag:undefined}",
+  "subfeatures": "jexl:{gene:undefined, id:undefined, parent:undefined, dbxref:undefined, gbkey:undefined, locus_tag:undefined, Product:feature.product, product:undefined, transl_table:undefined, source:undefined, phase:undefined, protein_id:undefined, note:undefined, Note:capital(feature.note)}"
+}
+
     },
     {
       "type": "MultiQuantitativeTrack",
@@ -763,7 +810,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.39)",
+    "name": "SaliBrowse (v0.40)",
     "margin": 0,
     "views": [
       {
