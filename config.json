@@ -633,12 +633,17 @@
           "uri": "/path/to/fa.metadata.yaml"
         }
       },
-      "displays": [
-        {
-          "type": "LinearGCContentTrackDisplay",
-          "displayId": "gc_content_HSISS4-LinearGCContentTrackDisplay"
-        }
-      ]
+            "displays": [
+              {
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_HSISS4-LinearGCContentTrackDisplay",
+                "selectedRendering": "",
+                "resolution": 1,
+                "windowSize": 200,
+                "windowDelta": 20
+              }
+            ]
     },
     {
       "type": "FeatureTrack",
@@ -738,7 +743,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.42)",
+    "name": "SaliBrowse (v0.43)",
     "margin": 0,
     "views": [
       {
@@ -806,7 +811,7 @@
                   "min": 0
                 },
                 "windowSize": 200,
-                "windowDelta": 10
+                "windowDelta": 20
               }
             ]
           },
