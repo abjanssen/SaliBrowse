@@ -19,7 +19,7 @@
           "main": "#ff9636"
         },
         "quaternary": {
-          "main": "#e4d7d1"
+          "main": "#0a4158"
         }
       }
     },
@@ -56,10 +56,6 @@
           "faiLocation": {
             "locationType": "UriLocation",
             "uri": "./data/HSISS4/HSISS4.fna.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
           }
         },
         "displays": [
@@ -627,10 +623,6 @@
         "faiLocation": {
           "locationType": "UriLocation",
           "uri": "./data/HSISS4/HSISS4.fna.fai"
-        },
-        "metadataLocation": {
-          "locationType": "UriLocation",
-          "uri": "/path/to/fa.metadata.yaml"
         }
       },
             "displays": [
@@ -743,15 +735,16 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.46)",
+    "name": "SaliBrowse (v0.47)",
     "margin": 0,
     "views": [
       {
         "id": "wz0zpVmpZGlzirFTL0CqT",
+        "displayName": "HSISS4",
         "minimized": false,
         "type": "LinearGenomeView",
         "offsetPx": 0,
-        "bpPerPx": 2.3191094619666046,
+        "bpPerPx": 2.31033020718,
         "displayedRegions": [
           {
             "reversed": false,
@@ -771,7 +764,7 @@
               {
                 "id": "doKSJDsY8la0WIQibo5G9",
                 "type": "LinearReferenceSequenceDisplay",
-                "heightPreConfig": 120,
+                "heightPreConfig": 100,
                 "configuration": "HSISS4-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
                 "showForward": true,
                 "showReverse": true,
@@ -788,6 +781,7 @@
               {
                 "id": "bxCoXHTNvaUziWWJa7ZFs",
                 "type": "LinearBasicDisplay",
+                "heightPreConfig": 200,
                 "configuration": "HSISS4_sorted.gff-LinearBasicDisplay"
               }
             ]
@@ -802,6 +796,7 @@
               {
                 "id": "j4N3EAiK2tC1KfjZwIiX-",
                 "type": "LinearGCContentTrackDisplay",
+                "heightPreConfig": 100,
                 "configuration": "gc_content_HSISS4-LinearGCContentTrackDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
