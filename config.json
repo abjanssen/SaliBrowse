@@ -29,6 +29,7 @@
     }
   },
   "plugins": [
+  { "name": "SessionNamePlugin", "umdLoc": { "uri": "plugins/SessionNamePlugin.js" } },
   { "name": "MsaView", "umdLoc": { "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js" } },
   { "name": "Protein3d", "umdLoc": { "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js" } },
   { "name": "ReferenceContactsWidget", "esmLoc": { "uri": "plugins/ReferenceContactsWidget.js" } },
@@ -735,7 +736,7 @@
     },
     "minimized": false,
     "id": "psGvqz3hwrksgqzkzC57F",
-    "name": "SaliBrowse (v0.58)",
+    "name": "SaliBrowse (v0.59)",
     "margin": 0,
     "views": [
       {
